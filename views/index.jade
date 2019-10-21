@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container
+      .column-2
+        p.inicio INICIAR SESIÓN
+        form#form-auth
+          .formulario
+            .email
+              input#email.form-control(type='email', placeholder='Enter email')
+            .pass
+              input#password.form-control(type='password', placeholder='Password')
+            .but
+              button(type='submit', value='submit') Ingresar
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous', style='')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js', integrity='sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut', crossorigin='anonymous', style='')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous', style='')
+    script(src='https://www.gstatic.com/firebasejs/6.2.0/firebase.js')
+    script.
+      var firebaseConfig = {
+      apiKey: "AIzaSyD1mzJFGlcrfhzzK3Bb3uA6Hp-vmSpBYlE",
+      authDomain: "desarrollo-de-aplicacion-e735b.firebaseapp.com",
+      databaseURL: "https://desarrollo-de-aplicacion-e735b.firebaseio.com",
+      projectId: "desarrollo-de-aplicacion-e735b",
+      storageBucket: "desarrollo-de-aplicacion-e735b.appspot.com",
+      messagingSenderId: "367389819408",
+      appId: "1:367389819408:web:95017f09890be123c14095",
+      measurementId: "G-H2LN376XFQ"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const FormAuth = document.querySelector('#form-auth')
+      const email = document.querySelector('#email')
+      const password = document.querySelector('#password')
+      FormAuth.addEventListener("submit", onSubmit)
+      function onSubmit(e){
+      var Email = email.value
+      var Password = password.value
+      e.preventDefault()
+      console.log(email.value)
+      console.log(password.value)
+      if(Email === '' || Password === ''){
+      console.log("vacio")
+      }else{
+      firebase.auth().signInWithEmailAndPassword(Email, Password).catch(function(error){
+      console.log("Error: "+error)
+      });
+      }
+      }
+    //
+      -
+      <form id="form-auth">
+      <div class="form-group">
+      <label for="email">Usuario:</label>
+      <input type="email" class="form-control" placeholder="Enter email" id="email">
+      <small class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+      <label for="password">Contraseña:</label>
+      <input type="password" class="form-control" placeholder="Password" id="password">
+      </div>
+      <button type="submit" value="submit" class="btn btn-primary" contenteditable="true" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Ingresar</button>
+      </form>

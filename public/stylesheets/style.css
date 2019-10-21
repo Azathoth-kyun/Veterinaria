@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background: url(../images/perro.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  margin-top: 10%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 400px;
+  border:0px;
+  justify-content: center;
+  align-items: center;
+}
+.column-2{
+  background: white;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.formulario{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.formulario input[type="email"],input[type="password"]{
+  margin:10px;
+  border:none;
+  outline: none;
+  border-bottom: 1px solid #fed330;
+  min-width: 0;
+  flex: 1;
+  height: 40px;
+  background-image: none;
+  line-height: 24px;
+  font-size: 18px;
+  width: 300px;
+  transition: 0.30s;
+}
+p{
+  color:#fed330;
+}
+.titulo{
+  font-size: 4em;
+}
+.eslogan{
+  font-size: 20px;
+}
+.inicio{
+  font-size: 2em;
+}
+.but{
+  margin-top: 20px;
+}
+button{
+  background: none;
+  color:grey;
+  font-size: 18px;
+  border:none;
+  width: 200px;
+  height: 50px;
+  border: 2px solid #fed330;
+  border-radius: 20px;
+  transition: 0.27s;
+}
+button:hover{
+  background: none;
+  color:white;
+  font-size: 18px;
+  border:none;
+  width: 200px;
+  height: 50px;
+  border: 2px solid #fed330;
+  background: #fed330;
+  border-radius: 20px;
+}
+.inicio{
+  color:grey;
+}
+.formulario input[type="email"]:hover,input[type="password"]:hover{
+  margin:10px;
+  border:none;
+  outline: none;
+  border-bottom: 2px solid #ffc800fb;
+  height: 40px;
+  font-size: 18px;
+  width: 300px;
+}
